@@ -1,6 +1,8 @@
 import inspect
 import logging
 
+import allure
+
 
 def customLogger():
     # This is used to get the class/method name from where this custom logger is called
@@ -33,3 +35,7 @@ def customLogger():
     logger.addHandler(fileHandler)
 
     return logger
+
+def allureLogs(text):
+    with allure.step(text):
+        pass
